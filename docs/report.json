@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "rules": 6,
+    "passed": 2,
+    "failed": 4,
+    "total_failed_rows": 140,
+    "rows_checked": 500,
+    "pass_rate_pct": 33.3,
+    "overall": "FAIL"
+  },
+  "results": [
+    {
+      "rule": "not_null[amount]",
+      "passed": false,
+      "failed_rows": 8,
+      "checked_rows": 500,
+      "fail_rate_pct": 1.6,
+      "detail": ""
+    },
+    {
+      "rule": "unique[order_id]",
+      "passed": true,
+      "failed_rows": 0,
+      "checked_rows": 500,
+      "fail_rate_pct": 0.0,
+      "detail": ""
+    },
+    {
+      "rule": "in_range[amount](0,1000)",
+      "passed": false,
+      "failed_rows": 20,
+      "checked_rows": 500,
+      "fail_rate_pct": 4.0,
+      "detail": "expected 0..1000"
+    },
+    {
+      "rule": "allowed_values[status]",
+      "passed": true,
+      "failed_rows": 0,
+      "checked_rows": 500,
+      "fail_rate_pct": 0.0,
+      "detail": "allowed=['paid', 'pending', 'refunded']"
+    },
+    {
+      "rule": "regex[email]",
+      "passed": false,
+      "failed_rows": 40,
+      "checked_rows": 500,
+      "fail_rate_pct": 8.0,
+      "detail": "[^@\\s]+@[^@\\s]+\\.[^@\\s]+"
+    },
+    {
+      "rule": "referential[customer_id->customer_id]",
+      "passed": false,
+      "failed_rows": 72,
+      "checked_rows": 500,
+      "fail_rate_pct": 14.4,
+      "detail": "200 valid keys"
+    }
+  ]
+}

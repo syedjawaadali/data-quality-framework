@@ -1,0 +1,10 @@
+Data-Quality Report
+========================================================
+  [   FAIL (8 rows)] not_null[amount]
+  [            PASS] unique[order_id]
+  [  FAIL (20 rows)] in_range[amount](0,1000)  -- expected 0..1000
+  [            PASS] allowed_values[status]
+  [  FAIL (40 rows)] regex[email]  -- [^@\s]+@[^@\s]+\.[^@\s]+
+  [  FAIL (72 rows)] referential[customer_id->customer_id]  -- 200 valid keys
+========================================================
+OVERALL: FAIL  (2/6 rules, 140 offending rows across 500 checked)
